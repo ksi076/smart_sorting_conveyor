@@ -97,7 +97,7 @@ QR코드 정보를 읽어와서 자동으로 지역별로 분류를 시행하는
 ### [오른쪽 분류기 작동 시연]
 ![시연](gif/오른쪽분류기.gif)
 
-### [전체영상]([https://drive.google.com/file/d/1wICn6sA5SGs-cMUMmPEFmAYt1xEubBA2/view?usp=sharing](https://drive.google.com/file/d/1bjLSxtKFtGQgho1-OvszhMfFyIRKV1H1/view?usp=sharing))
+### [전체영상]([https://drive.google.com/file/d/1wICn6sA5SGs-cMUMmPEFmAYt1xEubBA2/view?usp=sharing](https://drive.google.com/file/d/1bjLSxtKFtGQgho1-OvszhMfFyIRKV1H1/view?usp=sharing])
 
 
 ---
