@@ -91,26 +91,14 @@ QR코드 정보를 읽어와서 자동으로 지역별로 분류를 시행하는
 
 ## 🎥 시연 영상
 
-### [왼쪽 분류기 작동 시연](https://drive.google.com/file/d/1JJZ4wy2REE9QvrCth4uMI0Oh-UzQre7v/view?usp=sharing)
+### [왼쪽 분류기 작동 시연]
 ![시연영상](gif/졸작왼쪽분류.gif)
 
-### [차도 무단횡단 감지 시연](https://drive.google.com/file/d/10VPleeBBzlbaidgrZ4XxjRO3DYnDbJa4/view?usp=sharing)
+### [오른쪽 분류기 작동 시연]
 ![시연](gif/오른쪽분류기.gif)
 
-### [불법 주정차 감지 시연](https://drive.google.com/file/d/1wICn6sA5SGs-cMUMmPEFmAYt1xEubBA2/view?usp=sharing)
-![불법주정차](gif/display/불법주정차2.gif)
+### [전체영상]([https://drive.google.com/file/d/1wICn6sA5SGs-cMUMmPEFmAYt1xEubBA2/view?usp=sharing](https://drive.google.com/file/d/1bjLSxtKFtGQgho1-OvszhMfFyIRKV1H1/view?usp=sharing))
 
-### [불법 유턴 감지 시연](https://drive.google.com/file/d/1-yff9gF1twIYAe5XEUdBGuQiPEu5qhGJ/view?usp=sharing)
-![불법유턴](gif/display/불법유턴1.gif)
-
-### [차량 횡단보도 침범](https://drive.google.com/file/d/1e-4tieU3bb9hKjmdHmfrGHj2JFM-pdN3/view?usp=sharing)
-![차량침범](gif/display/차량횡단보도침범.gif)
-
-### [긴급상황 사고](https://drive.google.com/file/d/11_sgPJO63pYdR7drzoCO-xOwAlElfMGV/view?usp=sharing)
-![긴급상황사고](gif/display/긴급상황사고최종.gif)
-
-### [긴급 차 비켜주기](https://drive.google.com/file/d/1XEe5XvLOEKhPmtaGWWo1Pxdk5H6INKlp/view?usp=sharing)
-![긴급차비킴](gif/display/긴급차비켜주기.gif)
 
 ---
 
