@@ -28,61 +28,69 @@ servo2.start(0)  # 서보 2의 PWM 신호 시작
 ```
 ---
 
-### 2️⃣ 입력 처리
+### 2️⃣ 서보모터 제어 로직
 
-- **카메라 프레임 입력:**
-  ○ read_frame 함수로 실시간 영상 획득  
+```python
+def set_servo_angle(servo, angle):
+    duty = 2 + (angle / 18)  # 각도를 PWM 신호로 변환 (서보모터는 각도를 직접받는게 아닌 PWM 듀비티를 받음)
+    servo.ChangeDutyCycle(duty)                     #0도 -> 2, 90도 -> 7, 180도 -> 12
+    time.sleep(0.5)  # 서보모터가 움직일 시간을 줌
+    servo.ChangeDutyCycle(0)  # 서보모터를 멈춤
+```
+---
 
-- **전처리:**
-  ○ resize_frame으로 YOLO 입력 크기 조정  
+### 3️⃣ 카메라 설정 및 영상 입력
+
+```python
+capture = cv2.VideoCapture(0)
+capture.set(cv2.CAP_PROP_FRAME_WIDTH, 360)
+capture.set(cv2.CAP_PROP_FRAME_HEIGHT, 270)
+```
+---
+
+### 4️⃣ QR 인식 처리
+
+```python
+ qr = cv2.QRCodeDetector()  # openCV의 QR코드 검출기 객체 생성 (QR코드를 찾아주고, 안의 문자열도 읽어줌)
+        data, box, straight_qrcode = qr.detectAndDecode(GRAY_frame) # data: QR안의 문자열, box: QR의 위치좌표, straight_qrcode : 보정된 QR이미지
+```
 
 ---
 
-### 3️⃣ 객체 및 위반 감지
+### 5️ 지역 판별 로직(데이터처리)
 
-- **객체 탐지:**
-  ○ predict 함수로 YOLO 추론 수행  
-  ○ 사람(person), 차량(car, bus, truck) 인식  
-
-- **무단 횡단 감지:**
-  ○ check_jaywalk 함수로 제한 구역 내 사람 확인  
-
-- **불법 주정차 감지:**
-  ○ check_illegal_parking 함수로 일정 시간 정지 차량 판단  
-
-- **불법 유턴 감지:**
-  ○ check_illegal_uturn 함수로 이동 방향 변화 분석  
-
+```python
+  f qr_num[0:2] == "00":  # 광역자치단체 
+                do = "서울특별시"     #(QR문자열 앞의 두자리가 00 이면)
+            elif qr_num[0:2] == "03": 
+                do = "인천광역시"     #(QR문자열 앞의 두자리가 03 이면)  
+            elif qr_num[0:2] == "08":
+                do = "경기도"        #(QR문자열 앞의 두자리가 08 이면) 
+```
 ---
 
-### 4️⃣ 결과 처리
+### 6️⃣ 서보모터 동작(분류 실행)
 
-- **화면 출력:**
-  ○ draw_box 함수로 bbox 및 라벨 표시  
+```python
+  if do == "경기도":
+                    set_servo_angle(servo1, 90)  # 1번 서보모터를 90도로 회
+                    time.sleep(5)
+                    set_servo_angle(servo1, 0)   # 5초 대기후 원점복귀
+                    
+                elif do == "서울특별시":
+                    set_servo_angle(servo2, 90)  # 2번 서보모터를 90도로 회전
+                    time.sleep(5)
+                    set_servo_angle(servo2, 0)   # 5초 대기후 원점복귀
+```
 
-- **이미지 저장:**
-  ○ save_image 함수로 이벤트 이미지 저장  
+### 7️⃣ 중복 방지 & 예외 처리
 
-- **DB 저장:**
-  ○ save_db 함수로 로그 기록  
-    ■ 시간 (detected_at)  
-    ■ 이벤트 종류 (event_type)  
-    ■ 이미지 경로 (image_path)  
-
+```python
+   reset_QR += 1   # 반복문이 한번 돌때마다 카운터 1증가
+        if reset_QR == 96:  # 96이 되었을때 중복방지 리스트 초기화 (41ms마다 한번이기 때문에 약 4초마다 초기화)
+            ex_data = []
+```
 ---
 
-### 5️⃣ 예외 처리 및 추가 기능
-
-- **무시 영역 설정:**
-  ○ ignore_zone 함수로 특정 영역 사람 감지 제외  
-
-- **중복 방지:**
-  ○ duplicate_limit으로 일정 시간 내 중복 카운트 방지  
-
-- **비상 모드:**
-  ○ emergency_mode 실행 시 15초 유지  
-  ○ 'J' 키 입력 시 해제  
-
-- **오류 처리:**
-  ○ 카메라 오류 및 파일 저장 오류 대응  
+### 본 시스템은 "입력 -> 인식 -> 분석 -> 제어" 구조로 설계되었습니다.
 
