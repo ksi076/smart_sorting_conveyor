@@ -91,7 +91,7 @@ QR코드 정보를 읽어와서 자동으로 지역별로 분류를 시행하는
 
 ## 🎥 시연 영상
 
-### [인도 무단횡단 감지 시연](https://drive.google.com/file/d/1JJZ4wy2REE9QvrCth4uMI0Oh-UzQre7v/view?usp=sharing)
+### [왼쪽 분류기 작동 시연](https://drive.google.com/file/d/1JJZ4wy2REE9QvrCth4uMI0Oh-UzQre7v/view?usp=sharing)
 ![시연영상](gif/졸작왼쪽분류.gif)
 
 ### [차도 무단횡단 감지 시연](https://drive.google.com/file/d/10VPleeBBzlbaidgrZ4XxjRO3DYnDbJa4/view?usp=sharing)
