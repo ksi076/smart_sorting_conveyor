@@ -40,11 +40,7 @@ QR코드 정보를 읽어와서 자동으로 지역별로 분류를 시행하는
 ---
 
 ## 📋 컨베이어 모델링
-<div>
-  <img src="img/라즈베리파일 디스플레이.jpg" height="400">
-  <img src="img/무단횡단야간.png" style="width:250px; height:400px">
-  <img src="img/차량침범야간.png" style="width:250px; height:400px">
-</div>
+![모델링](img/플로우차트.png)
 
 
 ### SOLIDWORKS 2015 사용
@@ -72,16 +68,16 @@ QR코드 정보를 읽어와서 자동으로 지역별로 분류를 시행하는
 
 ##  📷  실물 사진
 
-![실물사진](img/실물사진.png)
+![실물사진](img/컨베이어벨트완성사진.png)
 
 ---
 
 
 
 
-## 🧠 시스템 구성도
+## 🧠 플로우차트
 
-![시스템 구성도](img/구성도2.png)
+![플로우차트](img/구성도2.png)
 
 
 ---
