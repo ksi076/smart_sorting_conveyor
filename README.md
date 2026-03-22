@@ -67,7 +67,7 @@ QR코드 정보를 읽어와서 자동으로 지역별로 분류를 시행하는
 
 ## 📂 소스 코드
 
-### [소스코드 바로가기(상세코드설명포함)](https://github.com/ksi076/smart_road_management_system/tree/main/src)
+### [소스코드 바로가기(상세코드설명포함)](https://github.com/ksi076/smart_sorting_conveyor/tree/main/src)
 
 ---
 
