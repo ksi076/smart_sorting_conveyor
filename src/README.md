@@ -25,7 +25,7 @@ servo2 = GPIO.PWM(servo2_pin, 50)
 # 서보모터 초기 위치 설정
 servo1.start(0)  # 서보 1의 PWM 신호 시작
 servo2.start(0)  # 서보 2의 PWM 신호 시작  
-
+```
 ---
 
 ### 2️⃣ 입력 처리
