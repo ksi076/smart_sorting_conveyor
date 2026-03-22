@@ -95,7 +95,7 @@ QR코드 정보를 읽어와서 자동으로 지역별로 분류를 시행하는
 ![시연영상](gif/졸작왼쪽분류.gif)
 
 ### [차도 무단횡단 감지 시연](https://drive.google.com/file/d/10VPleeBBzlbaidgrZ4XxjRO3DYnDbJa4/view?usp=sharing)
-![차도무단횡단](gif/display/차도무단횡단.gif)
+![시연](gif/오른쪽분류기.gif)
 
 ### [불법 주정차 감지 시연](https://drive.google.com/file/d/1wICn6sA5SGs-cMUMmPEFmAYt1xEubBA2/view?usp=sharing)
 ![불법주정차](gif/display/불법주정차2.gif)
