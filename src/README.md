@@ -2,14 +2,29 @@
 
 ---
 
-### 1️⃣ 시스템 초기화
+### 1️⃣ 초기 설정 (GPIO 및 서보모터 초기화)
 
-- **load_model, init_camera, init_db, create_directory**
-  ○ YOLO 모델, 카메라, DB, 저장 폴더 초기화.
+```python
+import cv2                  # openCV 라이브러리
+import RPi.GPIO as GPIO     # GPIO제어 라이브러리
+import time                 # 서보모터가 실제로 움직일 시간을 주기위해 사용
 
-- **초기 상태:**
-  ○ 카메라 ON 상태  
-  ○ 시스템 대기 상태  
+# 서보모터 제어를 위한 핀 번호 설정
+servo1_pin = 17  # GPIO 17 (서보모터 1 연결)
+servo2_pin = 18  # GPIO 18 (서보모터 2 연결)
+
+# GPIO 설정
+GPIO.setmode(GPIO.BCM)              #물리핀번호가 아닌 BCM방식으로 사용
+GPIO.setup(servo1_pin, GPIO.OUT)
+GPIO.setup(servo2_pin, GPIO.OUT)    # 서보모터 핀을 출력모드로 설정(라즈베리가 신호를 보내줘야함)
+
+# PWM 객체 생성 (50Hz 주파수, 서보모터용)
+servo1 = GPIO.PWM(servo1_pin, 50)
+servo2 = GPIO.PWM(servo2_pin, 50)
+
+# 서보모터 초기 위치 설정
+servo1.start(0)  # 서보 1의 PWM 신호 시작
+servo2.start(0)  # 서보 2의 PWM 신호 시작  
 
 ---
 
