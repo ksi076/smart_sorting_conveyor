@@ -57,7 +57,7 @@ capture.set(cv2.CAP_PROP_FRAME_HEIGHT, 270)
 
 ---
 
-### 5️ 지역 판별 로직(데이터처리)
+### 5️⃣ 지역 판별 로직(데이터처리)
 
 ```python
   f qr_num[0:2] == "00":  # 광역자치단체 
