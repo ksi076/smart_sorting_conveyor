@@ -92,5 +92,4 @@ capture.set(cv2.CAP_PROP_FRAME_HEIGHT, 270)
 ```
 ---
 
-### 본 시스템은 "입력 -> 인식 -> 분석 -> 제어" 구조로 설계되었습니다.
 
